@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhjclxc.mms.mapper.source1.SysUserMapper">
+
+    <resultMap id="BaseResultMap" type="SysUser">
+        <id column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+    </resultMap>
+
+    <insert id="insert">
+        insert into sys_user(user_id, user_name, password)
+        values (#{userId}, #{userName}, #{password})
+    </insert>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select user_id, user_name, password
+        from sys_user
+    </select>
+
+</mapper>
