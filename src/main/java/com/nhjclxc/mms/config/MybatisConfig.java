@@ -30,8 +30,8 @@ import java.util.*;
 @EnableTransactionManagement(proxyTargetClass = true)
 @EnableAspectJAutoProxy(exposeProxy = true)
 @MapperScans({
-        @MapperScan(basePackages = { "com.nhjclxc.mms.mapper.source1"}, sqlSessionFactoryRef = "source1SqlSessionFactory"),
-        @MapperScan(basePackages = { "com.nhjclxc.mms.mapper.source2"}, sqlSessionFactoryRef = "source2SqlSessionFactory")
+        @MapperScan(basePackages = { "com.nhjclxc.mms.mapper.source1.**"}, sqlSessionFactoryRef = "source1SqlSessionFactory"),
+        @MapperScan(basePackages = { "com.nhjclxc.mms.mapper.source2.**"}, sqlSessionFactoryRef = "source2SqlSessionFactory")
 })
 public class MybatisConfig implements EnvironmentAware {
 
